@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 32px;
+    background-color: #111827;
+    color: #f3f4f6;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #60aa5fa;
+}
