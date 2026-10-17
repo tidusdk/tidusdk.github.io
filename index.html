@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidus | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23A66BFF%22>✳</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- === Navbar === -->
+    <nav class="navbar" aria-label="Main Navigation">
+       <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">t.</span>
+        Tidus
+       </a>
+    <div class="navbar-links" id="primary-nav">
+       <a href="#about">About</a>
+       <a href="#projects">Projects</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" >
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true">
+            <span></span><span></span>        
+        </span>
+    </button>
+    </nav> 
+    <!-- === Main === -->
+<main id="main"> 
+        <!-- === Hero === -->
+    <header class="hero">
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" poster="media/hero.png">
+            <source src="media/hero.mp4" type="video/mp4">
+        </video>
+        <p class="hero-kicker">Design · code · ideas</p>        
+        <h1>Welcome to Tidus's Portfolio</h1>
+        <p class="hero-intro">I explore ideas through design and code.</p>
+        <a class="hero-link" href="#about">Get to know me</a>  
+     </header>
+     <!-- === About === -->
+     <section id="about">
+         <h2>About me</h2>
+        <p>I love to explore how to make beautiful designs through code and practice</p>
+    </section> 
+    <!-- === Projects === -->   
+    <section id="projects">
+        <h2>Projects</h2>
+        <article class="project-card">
+            <div class="project-art" aria-hidden="true">
+                <span class="orbit orbit-one"></span>
+                <span class="orbit orbit-two"></span>                
+                <span class="orbit-core"></span>
+            </div>
+            <p class="project-meta">Digital product · 2026</p>
+            <h3>Orbit Launcher</h3>
+            <p class="project-description">A custom Android launcher for a more personalized user experience</p>
+            <button class="project-toggle" type="button" aria-expanded="false">
+                Read project note
+            </button>
+            <p class="project-note" hidden>
+                More info will come at a later time.
+            </p>
+        </article>
+    </section>
+</main>
+    <!-- === Footer === -->
+<footer class="site-footer">
+    <p>© <span id="current-year">2026</span> Tidus.</p>
+      <a href="#main">Back to top ↑</a>
+</footer>
+</body>
+</html>

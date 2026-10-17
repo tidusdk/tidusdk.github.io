@@ -1,0 +1,342 @@
+/* ==== Global regel === */
+
+:root {
+    color-scheme: dark;
+    --bg: #101110;
+    --text: #efefe8;
+    --accent: #A66BFF;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'DM Sans', Arial, sans-serif;
+    --mono: 'DM Mono', monospace;
+    --line: #30332d; 
+    --surface: #171916;
+    --muted: #989b91;
+    font-family: var(--sans);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 48px 48px;
+}
+
+section,
+main {
+    scroll-margin-top: 5rem;
+}
+
+
+/* === Navbar og links === */
+
+main,
+.navbar,
+.site-footer {
+    width: min(1120px, 100%);
+    margin-inline: auto;
+}
+
+a {
+    color: inherit;    
+    text-decoration: none;    
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--accent);
+}
+
+.navbar {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+}
+
+.logo,
+.navbar-links,
+.site-footer {
+    font-family: var(--mono);
+    font-size: 0.8rem;    
+    letter-spacing: 0.12em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo-mark {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    font-family: var(--serif);
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-style: italic;
+    display: grid;
+    place-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;   
+}
+
+/* === Mobil menu === */
+
+.menu-toggle {
+    display: none;
+    
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 10px;    
+}
+
+.menu-icon span {
+    height: 2px;
+    background-color: currentColor;   
+    transition: transform 200ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+
+/* === Hero section === */
+
+.hero {
+    position: relative;    
+    padding: 1.5rem;
+    min-height: 70vh;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.5);
+    z-index: -1;
+    isolation: isolate;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    background: var(--surface);
+    isolation: isolate;
+}
+
+.hero h1 {
+    color: var(--accent);
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.hero-kicker {
+    margin: 0 0 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.hero-intro {    
+    font-size: 1.2rem;
+    max-width: 42ch;
+}
+
+.hero-link {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--line);
+}
+
+.hero-link:hover,
+.hero-link:focus-visible {
+    border-color: var(--accent);
+}
+
+/* === About === */
+
+#about {  
+    margin-top: 4rem;  
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+#about h2 {
+    font-family: var(--serif);
+}
+
+
+/* === Projects === */
+
+#projects {
+    border-top: 1px solid var(--line);
+}
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.5rem 1.5rem;  
+    transition: transform 220ms ease-in-out, border-color 220ms ease-in-out;  
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);    
+}
+
+/* === Knappen på project-card og Mobil menu === */
+
+.project-toggle,
+.menu-toggle
+ {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.project-toggle:hover,
+.project-toggle:focus-visible,
+.menu-toggle:hover,
+.menu-toggle:focus-visible
+ {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* === Her styler vi orbit-tegningen === */
+
+.project-art {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.orbit,
+.orbit-core {
+    position: absolute;     
+    top: 50%; 
+    left: 50%;    
+    border-radius: 50%;    
+}
+
+.orbit {
+    width: 190px;
+    height: 80px;
+    border: 1px solid var(--line);
+}
+
+.orbit-one {
+    transform: translate(-50%, -50%) rotate(-32deg);
+    border-color: var(--accent);
+    animation: orbit-turn 12s linear infinite;
+}
+
+.orbit-two {
+    transform: translate(-50%, -50%) rotate(32deg);
+}
+
+.orbit-core {  
+    width: 20px;
+    height: 20px; 
+    background:  var(--accent); 
+    transform: translate(-50%, -50%);   
+}
+
+/* === Her laver vi banens rotation === */
+
+@keyframes orbit-turn {
+    from { 
+        transform: translate(-50%, -50%) rotate(-32deg); 
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(328deg);
+    }   
+}
+
+/* === Her slår vi animationen fra for dem, der ønsker mindre bevægelse === */
+@media (prefers-reduced-motion: reduce) {
+    .orbit-one {
+        animation: none;
+    }
+}
+
+/* === Footer === */
+
+.site-footer {
+    margin-top: 6rem;    
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+    border-top: 1px solid var(--line);
+    align-items: center;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    /* === Mobil regler === */
+    body {
+        padding: 1.5rem;
+    }
+
+    #about {
+        grid-template-columns: 1fr;
+
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;    
+    }
+
+    .navbar-links {
+        display: none;
+        gap: 0;
+    }
+
+    .navbar-links a {
+        padding-block: 0.75rem;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .navbar-links.is-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg);        
+    }
+}
